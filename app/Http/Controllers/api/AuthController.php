@@ -32,7 +32,7 @@ class AuthController extends Controller
             ], 401);
         }
         $user = $request->user();
-        $token = $user->createToken('main')->plainTextToken;
+        $token = $user->createToken('evolt-token')->plainTextToken;
         return response()->json([
             'user' => $user,
             'token' => $token
