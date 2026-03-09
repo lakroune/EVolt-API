@@ -7,7 +7,6 @@ use App\Http\Requests\StoreChargingSessionRequest;
 use App\Http\Requests\UpdateChargingSessionRequest;
 use App\Models\ChargingSession;
 use App\Models\Reservation;
-use Illuminate\Http\Request;
 
 class ChargingSessionController extends Controller
 {
@@ -61,11 +60,11 @@ class ChargingSessionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateChargingSessionRequest  $request, ChargingSession $session)
+    public function update(UpdateChargingSessionRequest  $request, ChargingSession $chargingSession)
     {
         $data = $request->validated();
 
-        $session = ChargingSession::findOrFail($id);
+        $session = ChargingSession::findOrFail($chargingSession->id);
 
         if ($session->reservation->user_id !== auth()->id()) {
             return response()->json(['message' => 'Non autorisé'], 403);
