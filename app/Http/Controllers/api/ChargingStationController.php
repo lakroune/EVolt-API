@@ -26,7 +26,7 @@ class ChargingStationController extends Controller
         $data = $request->validated();
         ChargingStation::create($data);
         return response()->json([
-            'message' => 'Charging station created successfully'
+            'message' => 'created successfully'
         ], 201);
     }
 
@@ -46,7 +46,7 @@ class ChargingStationController extends Controller
         $data = $request->validated();
         $chargingStation->update($data);
         return response()->json([
-            'message' => 'Charging station updated successfully'
+            'message' => 'updated successfully'
         ], 200);
     }
 
@@ -57,7 +57,7 @@ class ChargingStationController extends Controller
     {
         $chargingStation->delete();
         return response()->json([
-            'message' => 'Charging station deleted successfully'
+            'message' => 'deleted successfully'
         ], 200);
     }
 }

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
@@ -16,10 +17,9 @@ class AuthController extends Controller
 
         $user = User::create($data);
         $token = $user->createToken('main')->plainTextToken;
-
-
         return response()->json([
-            'user' => $user
+            'user' => $user,
+            'token' => $token
         ], 201);
     }
 
