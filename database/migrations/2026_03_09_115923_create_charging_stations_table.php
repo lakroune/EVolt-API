@@ -22,7 +22,7 @@ return new class extends Migration
                 ->default('available'); //status de la station
             $table->decimal('price_per_kwh', 8, 2)->nullable();  //prix de la station
             $table->softDeletes();  //soft delete
-            $table->spatialIndex(['latitude', 'longitude']); //index spatial pour la géolocalisation
+            $table->index(['latitude', 'longitude']); //index spatial pour la géolocalisation
             $table->timestamps(); //timestamps  (created_at et updated_at)
         });
     }
