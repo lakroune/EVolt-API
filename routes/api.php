@@ -3,6 +3,7 @@
 use App\Http\Controllers\api\ChargingStationController;
 use App\Http\Controllers\api\ReservationController;
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\ChargingSessionController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,6 +22,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('reservations', ReservationController::class);
     Route::put('/reservations/{reservation}', [ReservationController::class, 'update']);
     Route::patch('/reservations/{reservation}/cancel', [ReservationController::class, 'cancel']);
+
+    Route::get('/sessions', [ChargingSessionController::class, 'index']);
+
 
     Route::middleware('can:admin-only')->group(function () {
         Route::post('/stations', [ChargingStationController::class, 'store']);
