@@ -4,6 +4,7 @@ use App\Http\Controllers\api\ChargingStationController;
 use App\Http\Controllers\api\ReservationController;
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\ChargingSessionController;
+use App\Http\Controllers\api\ConnectorTypeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,5 +34,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/stations', [ChargingStationController::class, 'store']);
         Route::put('/stations/{chargingStation}', [ChargingStationController::class, 'update']);
         Route::delete('/stations/{chargingStation}', [ChargingStationController::class, 'destroy']);
+        Route::apiResource('connector-types', ConnectorTypeController::class);
     });
 });

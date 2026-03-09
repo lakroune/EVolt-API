@@ -17,13 +17,12 @@ return new class extends Migration
             $table->foreignId('charging_station_id')->constrained();
             $table->timestamp('start_time');
             $table->timestamp('cancelled_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
             $table->integer('estimated_duration_minutes');
             $table->enum('status', ['pending', 'active', 'completed', 'cancelled'])->default('pending');
             $table->timestamp('notified_at')->nullable();
             $table->timestamps();
             // index pour les recherches
-            $table->index(['charging_station_id', 'start_time', 'end_time']);
+            $table->index(['charging_station_id', 'start_time']);
             $table->index(['user_id', 'status']);
         });
     }
