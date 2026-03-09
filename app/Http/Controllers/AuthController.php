@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -18,8 +19,31 @@ class AuthController extends Controller
 
 
         return response()->json([
+            'user' => $user
+        ], 201);
+    }
+
+    public function login(LoginRequest $request)
+    {
+        $les_infos = $request->validated();
+        if (!auth()->attempt($les_infos)) {
+            return response()->json([
+                'error' => 'Invalid email or password'
+            ], 401);
+        }
+        $user = $request->user();
+        $token = $user->createToken('main')->plainTextToken;
+        return response()->json([
             'user' => $user,
             'token' => $token
-        ], 201);
+        ], 200);
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+        return response()->json([
+            'message' => 'Logout successful'
+        ], 200);
     }
 }
