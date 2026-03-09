@@ -14,7 +14,8 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        
+        $reservations = Reservation::with(['user', 'chargingStation'])->get();
+        return response()->json($reservations, 200);
     }
 
     /**
@@ -22,7 +23,10 @@ class ReservationController extends Controller
      */
     public function store(StoreReservationRequest $request)
     {
-        //
+        $data = $request->validated();
+        $data['user_id'] = auth()->id();
+        $reservation = Reservation::create($data);
+        return response()->json($reservation, 201);
     }
 
     /**
@@ -30,7 +34,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        //
+        return response()->json($reservation->load(['user', 'chargingStation']), 200);
     }
 
     /**
@@ -38,7 +42,9 @@ class ReservationController extends Controller
      */
     public function update(UpdateReservationRequest $request, Reservation $reservation)
     {
-        //
+        $data = $request->validated();
+        $reservation->update($data);
+        return response()->json($reservation, 200);
     }
 
     /**
@@ -46,6 +52,9 @@ class ReservationController extends Controller
      */
     public function destroy(Reservation $reservation)
     {
-        //
+        $reservation->delete();
+        return response()->json([
+            'message' => 'deleted successfully'
+        ], 200);
     }
 }
