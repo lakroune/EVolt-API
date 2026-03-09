@@ -47,6 +47,7 @@ class ChargingStationController extends Controller
         $data = $request->validated();
         $chargingStation->update($data);
         return response()->json([
+            'station' => $chargingStation,
             'message' => 'updated successfully'
         ], 200);
     }

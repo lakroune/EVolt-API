@@ -14,7 +14,6 @@ class Reservation extends Model
         'user_id',
         'charging_station_id',
         'start_time',
-        'end_time',
         'estimated_duration_minutes',
         'status'
     ];

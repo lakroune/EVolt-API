@@ -31,6 +31,7 @@ class StoreChargingStationRequest extends FormRequest
             'address' => 'required|string|max:255',
             'status' => 'required|in:available,occupied,maintenance,offline',
             'price_per_kwh' => 'nullable|numeric|min:0',
+            'connector_type_id' => 'required|exists:connector_types,id',
         ];
     }
 
@@ -44,6 +45,9 @@ class StoreChargingStationRequest extends FormRequest
             'address.required' => 'L\'adresse de la station est requise.',
             'status.required' => 'Le statut de la station est requis.',
             'price_per_kwh.numeric' => 'Le prix par kWh doit être un nombre.',
+            'price_per_kwh.min' => 'Le prix par kWh doit être supérieur ou égal à 0.',
+            'connector_type_id.required' => 'Le type de connecteur est requis.',
+            'connector_type_id.exists' => 'Le type de connecteur spécifié n\'existe pas.',
         ];
     }
 }

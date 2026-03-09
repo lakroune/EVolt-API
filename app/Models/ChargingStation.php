@@ -16,6 +16,7 @@ class ChargingStation extends Model
         'address',
         'status',
         'price_per_kwh',
+        'connector_type_id',
     ];
 
 
