@@ -68,7 +68,7 @@ class ChargingStationController extends Controller
     public function search(Request $request)
     {
         $status = $request->query('status');
-        $connector = $request->query('connector');
+        $connector = $request->query('connector_type');
         $power = $request->query('power');
 
         $stations = ChargingStation::query();
@@ -78,7 +78,9 @@ class ChargingStationController extends Controller
         }
 
         if ($connector) {
-            $stations->where('connector_type', $connector);
+            $stations->whereHas('connectorType', function ($query) use ($connector) {
+                $query->where('name', $connector);
+            });
         }
 
         if ($power) {
