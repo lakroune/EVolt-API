@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('reservation_id')->constrained()->onDelete('cascade');
-            $table->decimal('energy_delivered_kwh', 8, 2)->default(0); //puissance de la station
-            $table->timestamp('start_time')->nullable();  //date de début
-            $table->timestamp('end_time')->nullable(); //date de fin
-            $table->decimal('total_cost', 10, 2)->default(0); //prix de la station
-            $table->enum('status', ['in_progress', 'completed', 'failed'])->default('in_progress'); //status de la session
+            $table->decimal('energy_delivered_kwh', 8, 2)->default(0);
+            $table->timestamp('start_time')->nullable();
+            $table->timestamp('end_time')->nullable();
+            $table->decimal('total_cost', 10, 2)->default(0);
+            $table->enum('status', ['in_progress', 'completed', 'failed'])->default('in_progress');
+            $table->timestamp('updated_at')->nullable();
             $table->timestamps();
         });
     }

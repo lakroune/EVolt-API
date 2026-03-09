@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreChargingSessionRequest;
+use App\Http\Requests\UpdateChargingSessionRequest;
 use App\Models\ChargingSession;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class ChargingSessionController extends Controller
@@ -25,9 +28,22 @@ class ChargingSessionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreChargingSessionRequest $request)
     {
+        $data = $request->validated();
         //
+        $reservation = Reservation::where('id', $data['reservation_id'])
+            ->where('user_id', auth()->id())
+            ->firstOrFail();
+
+        $data['start_time'] = now();
+
+        $session = ChargingSession::create($data);
+
+        return response()->json([
+            'session' => $session,
+            'message' => 'Session started successfully'
+        ], 201);
     }
 
     /**
@@ -41,9 +57,23 @@ class ChargingSessionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateChargingSessionRequest  $request, string $id)
     {
-        //
+        $data = $request->validated();
+
+        $session = ChargingSession::findOrFail($id);
+
+        if ($session->reservation->user_id !== auth()->id()) {
+            return response()->json(['message' => 'Non autorisé'], 403);
+        }
+
+        $data['end_time'] = now();
+        $session->update($data);
+
+        return response()->json([
+            'session' => $session,
+            'message' => 'Session ended successfully'
+        ], 200);
     }
 
     /**
