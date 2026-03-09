@@ -13,7 +13,17 @@ return new class extends Migration
     {
         Schema::create('charging_stations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name'); //nom de la station
+            $table->decimal('power_kw', 8, 2); //puissance de la station
+            $table->decimal('latitude', 10, 8); //latitude de la station
+            $table->decimal('longitude', 11, 8); //longitude de la station
+            $table->string('address');  //adresse de la station
+            $table->enum('status', ['available', 'occupied', 'maintenance', 'offline'])
+                ->default('available'); //status de la station
+            $table->decimal('price_per_kwh', 8, 2)->nullable();  //prix de la station
+            $table->softDeletes();  //soft delete
+            $table->spatialIndex(['latitude', 'longitude']); //index spatial pour la géolocalisation
+            $table->timestamps(); //timestamps  (created_at et updated_at)
         });
     }
 

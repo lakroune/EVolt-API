@@ -13,17 +13,20 @@ return new class extends Migration
     {
         Schema::create('charging_sessions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->decimal('power_kw', 8, 2);
-            $table->decimal('latitude', 10, 8);
-            $table->decimal('longitude', 11, 8);
-            $table->string('address');
-            $table->enum('status', ['available', 'occupied', 'maintenance', 'offline'])
-                ->default('available');
-            $table->decimal('price_per_kwh', 8, 2)->nullable();
-            $table->softDeletes();
 
-            $table->spatialIndex(['latitude', 'longitude']);
+            $table->foreignId('reservation_id')
+                ->constrained()
+                ->onDelete('cascade'); //foreign key de la réservation
+
+            $table->decimal('energy_delivered_kwh', 8, 2)->default(0); //puissance de la station
+            $table->timestamp('start_time')->nullable();  //date de début
+            $table->timestamp('end_time')->nullable(); //date de fin
+
+            $table->decimal('total_cost', 10, 2)->default(0); //prix de la station
+
+            $table->enum('status', ['in_progress', 'completed', 'failed'])
+                ->default('in_progress'); //status de la session
+
             $table->timestamps();
         });
     }
