@@ -71,7 +71,7 @@ class ReservationController extends Controller
         if ($reservation->user_id !== auth()->id()) {
             return response()->json(['message' => 'No autorize'], 403);
         }
-        $reservation->update(['status' => 'cancelled']);
+        $reservation->update(['status' => 'cancelled', 'cancelled_at' => now()]);
         return response()->json([
             'reservation' => $reservation,
             'message' => 'cancelled successfully'
