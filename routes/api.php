@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-
+Route::get('/stations/search', [ChargingStationController::class, 'search']);
 
 Route::get('/stations', [ChargingStationController::class, 'index']);
 Route::get('/stations/{chargingStation}', [ChargingStationController::class, 'show']);
- 
+
 Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout']);

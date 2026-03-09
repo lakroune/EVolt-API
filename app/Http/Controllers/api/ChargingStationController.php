@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ChargingStation;
 use App\Http\Requests\StoreChargingStationRequest;
 use App\Http\Requests\UpdateChargingStationRequest;
+use Symfony\Component\HttpFoundation\Request;
 
 class ChargingStationController extends Controller
 {
@@ -58,6 +59,34 @@ class ChargingStationController extends Controller
         $chargingStation->delete();
         return response()->json([
             'message' => 'deleted successfully'
+        ], 200);
+    }
+
+    /**
+     * Search for charging stations based on location and filters.
+     */
+    public function search(Request $request)
+    {
+        $status = $request->query('status');
+        $connector = $request->query('connector');
+        $power = $request->query('power');
+
+        $stations = ChargingStation::query();
+
+        if ($status) {
+            $stations->where('status', $status);
+        }
+
+        if ($connector) {
+            $stations->where('connector_type', $connector);
+        }
+
+        if ($power) {
+            $stations->where('power_kw', '>=', $power);
+        }
+
+        return response()->json([
+            'stations' => $stations->get()
         ], 200);
     }
 }
