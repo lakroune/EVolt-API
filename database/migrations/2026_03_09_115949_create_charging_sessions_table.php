@@ -20,7 +20,6 @@ return new class extends Migration
             $table->timestamp('end_time')->nullable();
             $table->decimal('total_cost', 10, 2)->default(0);
             $table->enum('status', ['in_progress', 'completed', 'failed'])->default('in_progress');
-            $table->timestamp('updated_at')->nullable();
             $table->timestamps();
         });
     }

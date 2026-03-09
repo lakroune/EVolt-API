@@ -49,15 +49,19 @@ class ChargingSessionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(ChargingSession $chargingSession)
     {
-        //
+        if ($chargingSession->reservation->user_id !== auth()->id()) {
+            return response()->json(['message' => 'Non autorisé'], 403);
+        }
+        return response()->json($chargingSession, 200);
     }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateChargingSessionRequest  $request, string $id)
+    public function update(UpdateChargingSessionRequest  $request, ChargingSession $session)
     {
         $data = $request->validated();
 
@@ -79,8 +83,14 @@ class ChargingSessionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(ChargingSession $chargingSession)
     {
-        //
+        if ($chargingSession->reservation->user_id !== auth()->id()) {
+            return response()->json(['message' => 'Non autorisé'], 403);
+        }
+        $chargingSession->delete();
+        return response()->json([
+            'message' => 'deleted successfully'
+        ], 200);
     }
 }

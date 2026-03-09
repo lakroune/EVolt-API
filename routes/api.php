@@ -25,6 +25,17 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/sessions', [ChargingSessionController::class, 'index']);
 
+    // Commencer une nouvelle session
+    Route::post('/sessions', [ChargingSessionController::class, 'store']);
+
+    // Mettre à jour / terminer une session spécifique
+    Route::put('/sessions/{id}', [ChargingSessionController::class, 'update']);
+
+    // (Optionnel) Voir une session spécifique
+    Route::get('/sessions/{id}', [ChargingSessionController::class, 'show']);
+
+    // (Optionnel) Supprimer une session
+    Route::delete('/sessions/{id}', [ChargingSessionController::class, 'destroy']);
 
     Route::middleware('can:admin-only')->group(function () {
         Route::post('/stations', [ChargingStationController::class, 'store']);
