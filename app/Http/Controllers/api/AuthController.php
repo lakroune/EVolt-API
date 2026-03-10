@@ -16,7 +16,7 @@ class AuthController extends Controller
         $data = $request->validated();
 
         $user = User::create($data);
-        $token = $user->createToken('main')->plainTextToken;
+        $token = $user->createToken('evolt-token')->plainTextToken;
         return response()->json([
             'user' => $user,
             'token' => $token

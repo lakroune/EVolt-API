@@ -24,7 +24,7 @@ class ReservationController extends Controller
     public function store(StoreReservationRequest $request)
     {
         $data = $request->validated();
-        $data['user_id'] = auth()->id();
+        $data['user_id'] = 1;
         $reservation = Reservation::create($data);
         return response()->json($reservation, 201);
     }
