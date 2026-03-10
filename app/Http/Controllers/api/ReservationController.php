@@ -9,6 +9,8 @@ use App\Http\Requests\UpdateReservationRequest;
 
 class ReservationController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */

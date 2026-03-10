@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ChargingStationController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
@@ -97,7 +99,7 @@ class ChargingStationController extends Controller
     {
         $stations = ChargingStation::all();
 
-        
+
 
         return response()->json([
             'totalStations' => $stations->count(),

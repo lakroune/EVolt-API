@@ -10,6 +10,7 @@ use App\Models\Reservation;
 
 class ChargingSessionController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      */

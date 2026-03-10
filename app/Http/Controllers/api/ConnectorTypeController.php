@@ -9,6 +9,8 @@ use App\Http\Requests\UpdateConnectorTypeRequest;
 
 class ConnectorTypeController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
