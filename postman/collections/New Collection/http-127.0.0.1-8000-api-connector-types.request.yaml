@@ -10,3 +10,4 @@ body:
 settings:
   disabledSystemHeaders: []
 order: 1773143663152
+examples: ./.resources\http-127.0.0.1-8000-api-connector-types.resources\examples

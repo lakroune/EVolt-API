@@ -92,4 +92,15 @@ class ChargingStationController extends Controller
             'stations' => $stations->get()
         ], 200);
     }
+
+    public function getStats()
+    {
+        $stations = ChargingStation::all();
+
+        
+
+        return response()->json([
+            'totalStations' => $stations->count(),
+        ], 200);
+    }
 }

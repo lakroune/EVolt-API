@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/stations/search', [ChargingStationController::class, 'search']);
-
 Route::get('/stations', [ChargingStationController::class, 'index']);
 Route::get('/stations/{chargingStation}', [ChargingStationController::class, 'show']);
 
@@ -33,6 +32,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware('can:admin-only')->group(function () {
         Route::post('/stations', [ChargingStationController::class, 'store']);
         Route::put('/stations/{chargingStation}', [ChargingStationController::class, 'update']);
+        Route::get('/stations/stats', [ChargingStationController::class, 'getStats']);
         Route::delete('/stations/{chargingStation}', [ChargingStationController::class, 'destroy']);
         Route::apiResource('connector-types', ConnectorTypeController::class);
     });
