@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: http://127.0.0.1:8000/api/connector-types/3
+  method: DELETE
+  headers:
+    Authorization: "{{token }}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: "{\r
+
+      \    \"connectorType\": {\r
+
+      \        \"id\": 3,\r
+
+      \        \"name\": \"CHAdeMO\",\r
+
+      \        \"description\": null,\r
+
+      \        \"created_at\": \"2026-03-12T11:38:31.000000Z\",\r
+
+      \        \"updated_at\": \"2026-03-12T11:38:31.000000Z\"\r
+
+      \    },\r
+
+      \    \"message\": \"deleted successfully\"\r
+
+      }"
+order: 1773315531690

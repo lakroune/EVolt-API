@@ -5,3 +5,4 @@ method: GET
 headers:
   Authorization: "{{token }}"
 order: 5000
+examples: ./.resources\get connector-types.resources\examples

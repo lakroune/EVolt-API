@@ -1,5 +1,8 @@
 $kind: http-request
 name: delete connector type
-url: ""
-method: GET
+url: http://127.0.0.1:8000/api/connector-types/3
+method: DELETE
+headers:
+  Authorization: "{{token }}"
 order: 7000
+examples: ./.resources\delete connector type.resources\examples

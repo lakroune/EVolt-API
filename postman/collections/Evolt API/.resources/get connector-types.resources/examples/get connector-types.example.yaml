@@ -1,0 +1,29 @@
+$kind: http-example
+request:
+  url: http://127.0.0.1:8000/api/connector-types/1
+  method: POST
+  headers:
+    Authorization: "{{token }}"
+  queryParams:
+    - key: ""
+      value: ""
+      disabled: true
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: "{\r
+
+      \    \"id\": 1,\r
+
+      \    \"name\": \"CHAdeMO\",\r
+
+      \    \"description\": null,\r
+
+      \    \"created_at\": \"2026-03-12T11:26:20.000000Z\",\r
+
+      \    \"updated_at\": \"2026-03-12T11:26:20.000000Z\"\r
+
+      }"
+order: 1773315222495

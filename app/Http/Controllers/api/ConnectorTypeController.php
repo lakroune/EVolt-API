@@ -61,6 +61,7 @@ class ConnectorTypeController extends Controller
     {
         $connectorType->delete();
         return response()->json([
+            'connectorType' => $connectorType,
             'message' => 'deleted successfully'
         ], 200);
     }

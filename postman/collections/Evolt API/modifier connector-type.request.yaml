@@ -2,4 +2,13 @@ $kind: http-request
 name: modifier connector-type
 url: http://127.0.0.1:8000/api/connector-types/1
 method: PUT
+headers:
+  Authorization: "{{token }}"
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\":\"connctor type R\"\r
+
+    }"
 order: 6000
