@@ -1,0 +1,28 @@
+$kind: http-request
+name: add station
+url: http://127.0.0.1:8000/api/stations
+method: POST
+headers:
+  Authorization: "{{token }}"
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Borne Rabat Centre\",\r
+
+    \  \"power_kw\": 60,\r
+
+    \  \"latitude\": 34.0209,\r
+
+    \  \"longitude\": -6.8416,\r
+
+    \  \"address\": \"Avenue Mohammed V, Rabat\",\r
+
+    \  \"status\": \"available\",\r
+
+    \  \"price_per_kwh\": 1.8,\r
+
+    \  \"connector_type_id\": 6\r
+
+    }"
+order: 3700811169965530

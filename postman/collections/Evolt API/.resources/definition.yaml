@@ -1,0 +1,11 @@
+$kind: collection
+name: Evolt API
+variables:
+  "token ": ""
+auth:
+  - id: 4dd92e44-8db5-47af-b842-23e0908352e6
+    type: bearer
+    name: Bearer Token
+    description: token  auth
+    credentials:
+      token: "{{token}}"

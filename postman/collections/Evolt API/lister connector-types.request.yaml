@@ -1,0 +1,10 @@
+$kind: http-request
+name: lister connector-types
+url: http://127.0.0.1:8000/api/connector-types
+method: GET
+headers:
+  Authorization: Bearer 10|8kqEYis8wnC0IxggCeAB8FUOZqudPUP4ZJOvLPNVe1be4175
+body:
+  type: json
+  content: ""
+order: 4000

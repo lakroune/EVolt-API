@@ -1,0 +1,5 @@
+$kind: http-request
+name: modifier connector-type
+url: http://127.0.0.1:8000/api/connector-types/1
+method: PUT
+order: 6000

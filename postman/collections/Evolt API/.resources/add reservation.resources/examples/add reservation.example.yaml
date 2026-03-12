@@ -1,0 +1,40 @@
+$kind: http-example
+request:
+  url: http://127.0.0.1:8000/api/reservations
+  method: POST
+  headers:
+    Authorization: Bearer 10|8kqEYis8wnC0IxggCeAB8FUOZqudPUP4ZJOvLPNVe1be4175
+  body:
+    type: json
+    content: "{\r
+
+      \  \"charging_station_id\": 4,\r
+
+      \  \"start_time\": \"2027-03-09T23:59:00Z\",\r
+
+      \  \"estimated_duration_minutes\": 60\r
+
+      }"
+response:
+  statusCode: 201
+  statusText: OK
+  body:
+    type: json
+    content: "{\r
+
+      \    \"charging_station_id\": 4,\r
+
+      \    \"start_time\": \"2027-03-09T23:59:00Z\",\r
+
+      \    \"estimated_duration_minutes\": 60,\r
+
+      \    \"user_id\": 1,\r
+
+      \    \"updated_at\": \"2026-03-12T10:57:16.000000Z\",\r
+
+      \    \"created_at\": \"2026-03-12T10:57:16.000000Z\",\r
+
+      \    \"id\": 2\r
+
+      }"
+order: 1773313125885

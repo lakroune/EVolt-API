@@ -10,17 +10,15 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    
+
 
     public function  register(RegisterRequest $request)
     {
         $data = $request->validated();
 
         $user = User::create($data);
-        $token = $user->createToken('evolt-token')->plainTextToken;
         return response()->json([
-            'user' => $user,
-            'token' => $token
+            'user' => $user
         ], 201);
     }
 

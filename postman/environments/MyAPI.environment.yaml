@@ -1,6 +1,0 @@
-name: MyAPI
-values:
-  - key: authToken
-    value: 1|P40dFRxWNLdGzLR1S5Tdl2JCsU2DzwVIMbllJGeHc15d0cfa
-    enabled: true
-color: 0

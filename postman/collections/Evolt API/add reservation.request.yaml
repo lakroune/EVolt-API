@@ -1,0 +1,19 @@
+$kind: http-request
+name: add reservation
+url: http://127.0.0.1:8000/api/reservations
+method: POST
+headers:
+  Authorization: "{{token }}"
+body:
+  type: json
+  content: "{\r
+
+    \  \"charging_station_id\": 4,\r
+
+    \  \"start_time\": \"2027-03-09T23:59:00Z\",\r
+
+    \  \"estimated_duration_minutes\": 60\r
+
+    }"
+order: 4415541827640527
+examples: ./.resources\add reservation.resources\examples

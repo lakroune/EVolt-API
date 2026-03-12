@@ -23,8 +23,6 @@ class UpdateConnectorTypeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
-            'connector_type_id' => 'required|exists:connector_types,id',
             'name' => 'required|string|max:255|unique:connector_types,name,'
         ];
     }

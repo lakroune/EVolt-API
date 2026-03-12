@@ -1,0 +1,5 @@
+$kind: http-request
+name: delete connector type
+url: ""
+method: GET
+order: 7000
