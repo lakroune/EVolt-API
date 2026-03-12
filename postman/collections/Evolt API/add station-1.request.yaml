@@ -26,4 +26,4 @@ body:
 
     }"
 examples: ./.resources\add station-1.resources\examples
-order: 8724
+order: 8000

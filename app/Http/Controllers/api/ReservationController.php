@@ -28,7 +28,10 @@ class ReservationController extends Controller
         $data = $request->validated();
         $data['user_id'] = 1;
         $reservation = Reservation::create($data);
-        return response()->json($reservation, 201);
+        return response()->json([
+            'reservation' => $reservation,
+            'message' => 'created successfully'
+        ], 201);
     }
 
     /**
@@ -51,7 +54,10 @@ class ReservationController extends Controller
         $data['updated_at'] = now();
         $reservation->update($data);
 
-        return response()->json($reservation, 200);
+        return response()->json([
+            'reservation' => $reservation,
+            'message' => 'updated successfully'
+        ], 200);
     }
 
     /**

@@ -1,0 +1,83 @@
+$kind: http-example
+request:
+  url: http://127.0.0.1:8000/api/reservations/1
+  method: POST
+  headers:
+    Authorization: "{{token }}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: "{\r
+
+      \    \"id\": 1,\r
+
+      \    \"user_id\": 1,\r
+
+      \    \"charging_station_id\": 3,\r
+
+      \    \"start_time\": \"2027-03-09 23:59:00\",\r
+
+      \    \"cancelled_at\": null,\r
+
+      \    \"estimated_duration_minutes\": 23,\r
+
+      \    \"status\": \"pending\",\r
+
+      \    \"notified_at\": null,\r
+
+      \    \"created_at\": \"2026-03-12T11:52:31.000000Z\",\r
+
+      \    \"updated_at\": \"2026-03-12T11:52:31.000000Z\",\r
+
+      \    \"user\": {\r
+
+      \        \"id\": 1,\r
+
+      \        \"name\": \"Ismail Lakroune\",\r
+
+      \        \"email\": \"laelroune00@gmail.com\",\r
+
+      \        \"email_verified_at\": null,\r
+
+      \        \"created_at\": \"2026-03-12T11:13:23.000000Z\",\r
+
+      \        \"updated_at\": \"2026-03-12T11:13:23.000000Z\",\r
+
+      \        \"deleted_at\": null,\r
+
+      \        \"role\": \"admin\"\r
+
+      \    },\r
+
+      \    \"charging_station\": {\r
+
+      \        \"id\": 3,\r
+
+      \        \"name\": \"Borne Rabat Centre\",\r
+
+      \        \"power_kw\": \"60.00\",\r
+
+      \        \"latitude\": \"34.02090000\",\r
+
+      \        \"longitude\": \"-6.84160000\",\r
+
+      \        \"address\": \"Avenue Mohammed V, Rabat\",\r
+
+      \        \"status\": \"available\",\r
+
+      \        \"connector_type_id\": 4,\r
+
+      \        \"price_per_kwh\": \"1.80\",\r
+
+      \        \"deleted_at\": null,\r
+
+      \        \"created_at\": \"2026-03-12T11:46:39.000000Z\",\r
+
+      \        \"updated_at\": \"2026-03-12T11:46:39.000000Z\"\r
+
+      \    }\r
+
+      }"
+order: 3250756233230183

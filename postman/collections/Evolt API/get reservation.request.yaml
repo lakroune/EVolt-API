@@ -1,0 +1,8 @@
+$kind: http-request
+name: get reservation
+url: http://127.0.0.1:8000/api/reservations/5
+method: GET
+headers:
+  Authorization: "{{token }}"
+examples: ./.resources\get reservation.resources\examples
+order: 3488690645852358

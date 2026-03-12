@@ -1,0 +1,8 @@
+$kind: http-request
+name: lister reservations
+url: http://127.0.0.1:8000/api/reservations
+method: GET
+headers:
+  Authorization: "{{token }}"
+examples: ./.resources\lister reservations.resources\examples
+order: 2640273698985632

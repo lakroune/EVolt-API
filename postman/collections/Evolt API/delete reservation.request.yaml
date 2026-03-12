@@ -1,0 +1,7 @@
+$kind: http-request
+name: delete reservation
+url: http://127.0.0.1:8000/api/reservations/5
+method: DELETE
+headers:
+  Authorization: "{{token }}"
+order: 4121602294341572
