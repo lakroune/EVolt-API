@@ -1,0 +1,45 @@
+$kind: http-example
+request:
+  url: http://127.0.0.1:8000/api/stations/1
+  method: DELETE
+  headers:
+    Authorization: "{{token }}"
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: json
+    content: "{\r
+
+      \    \"station\": {\r
+
+      \        \"id\": 1,\r
+
+      \        \"name\": \"Borne Rabat Centre\",\r
+
+      \        \"power_kw\": \"60.00\",\r
+
+      \        \"latitude\": \"34.02090000\",\r
+
+      \        \"longitude\": \"-6.84160000\",\r
+
+      \        \"address\": \"Avenue Mohammed V, Rabat\",\r
+
+      \        \"status\": \"available\",\r
+
+      \        \"connector_type_id\": 4,\r
+
+      \        \"price_per_kwh\": \"1.80\",\r
+
+      \        \"deleted_at\": null,\r
+
+      \        \"created_at\": \"2026-03-12T11:41:40.000000Z\",\r
+
+      \        \"updated_at\": \"2026-03-12T11:41:40.000000Z\"\r
+
+      \    },\r
+
+      \    \"message\": \"deleted successfully\"\r
+
+      }"
+order: 1773316133888

@@ -3,8 +3,7 @@ name: add station
 url: http://127.0.0.1:8000/api/stations
 method: POST
 headers:
-  - key: Authorization
-    value: "{{token }}"
+  Authorization: "{{token }}"
 body:
   type: json
   content: "{\r
@@ -23,7 +22,8 @@ body:
 
     \  \"price_per_kwh\": 1.8,\r
 
-    \  \"connector_type_id\": 6\r
+    \  \"connector_type_id\": 4\r
 
     }"
-order: 3364589299304675
+order: 9000
+examples: ./.resources\add station.resources\examples

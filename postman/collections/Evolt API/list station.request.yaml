@@ -4,4 +4,5 @@ url: http://127.0.0.1:8000/api/stations
 method: GET
 headers:
   Authorization: "{{token }}"
-order: 9000
+order: 11000
+examples: ./.resources\list station.resources\examples

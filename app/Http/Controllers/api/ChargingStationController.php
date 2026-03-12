@@ -27,8 +27,9 @@ class ChargingStationController extends Controller
     public function store(StoreChargingStationRequest $request)
     {
         $data = $request->validated();
-        ChargingStation::create($data);
+        $chargingStation =  ChargingStation::create($data);
         return response()->json([
+            'station' => $chargingStation,
             'message' => 'created successfully'
         ], 201);
     }
@@ -61,6 +62,7 @@ class ChargingStationController extends Controller
     {
         $chargingStation->delete();
         return response()->json([
+            'station' => $chargingStation,
             'message' => 'deleted successfully'
         ], 200);
     }

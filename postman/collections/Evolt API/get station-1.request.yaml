@@ -1,8 +1,0 @@
-$kind: http-request
-name: get station
-url: http://127.0.0.1:8000/api/stations
-method: GET
-headers:
-  - key: Authorization
-    value: "{{token }}"
-order: 4320236190887346

@@ -1,0 +1,8 @@
+$kind: http-request
+name: delete station
+url: http://127.0.0.1:8000/api/stations/1
+method: DELETE
+headers:
+  Authorization: "{{token }}"
+order: 12000
+examples: ./.resources\delete station.resources\examples

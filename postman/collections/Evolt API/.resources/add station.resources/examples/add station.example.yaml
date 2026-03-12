@@ -1,0 +1,64 @@
+$kind: http-example
+request:
+  url: http://127.0.0.1:8000/api/stations
+  method: POST
+  headers:
+    Authorization: "{{token }}"
+  body:
+    type: json
+    content: "{\r
+
+      \  \"name\": \"Borne Rabat Centre\",\r
+
+      \  \"power_kw\": 60,\r
+
+      \  \"latitude\": 34.0209,\r
+
+      \  \"longitude\": -6.8416,\r
+
+      \  \"address\": \"Avenue Mohammed V, Rabat\",\r
+
+      \  \"status\": \"available\",\r
+
+      \  \"price_per_kwh\": 1.8,\r
+
+      \  \"connector_type_id\": 4\r
+
+      }"
+response:
+  statusCode: 201
+  statusText: Created
+  body:
+    type: json
+    content: "{\r
+
+      \    \"station\": {\r
+
+      \        \"name\": \"Borne Rabat Centre\",\r
+
+      \        \"power_kw\": 60,\r
+
+      \        \"latitude\": 34.0209,\r
+
+      \        \"longitude\": -6.8416,\r
+
+      \        \"address\": \"Avenue Mohammed V, Rabat\",\r
+
+      \        \"status\": \"available\",\r
+
+      \        \"price_per_kwh\": 1.8,\r
+
+      \        \"connector_type_id\": 4,\r
+
+      \        \"updated_at\": \"2026-03-12T11:42:25.000000Z\",\r
+
+      \        \"created_at\": \"2026-03-12T11:42:25.000000Z\",\r
+
+      \        \"id\": 2\r
+
+      \    },\r
+
+      \    \"message\": \"created successfully\"\r
+
+      }"
+order: 1773315753864

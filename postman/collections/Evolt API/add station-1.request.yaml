@@ -1,14 +1,14 @@
 $kind: http-request
 name: add station
-url: http://127.0.0.1:8000/api/stations
-method: POST
+url: http://127.0.0.1:8000/api/stations/2
+method: PUT
 headers:
   Authorization: "{{token }}"
 body:
   type: json
   content: "{\r
 
-    \  \"name\": \"Borne Rabat Centre\",\r
+    \  \"name\": \"Borne Rabat \",\r
 
     \  \"power_kw\": 60,\r
 
@@ -22,7 +22,8 @@ body:
 
     \  \"price_per_kwh\": 1.8,\r
 
-    \  \"connector_type_id\": 6\r
+    \  \"connector_type_id\": 4\r
 
     }"
-order: 3700811169965530
+examples: ./.resources\add station-1.resources\examples
+order: 8724
