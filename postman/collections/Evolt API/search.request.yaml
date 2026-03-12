@@ -1,5 +1,8 @@
 $kind: http-request
 name: search
-url: ""
+url: http://127.0.0.1:8000/api/stations/search
 method: GET
+headers:
+  Authorization: "{{token }}"
 order: 4482819996508087
+examples: ./.resources\search.resources\examples

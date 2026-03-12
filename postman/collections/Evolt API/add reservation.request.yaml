@@ -12,7 +12,7 @@ body:
 
     \  \"start_time\": \"2027-03-09T23:59:00Z\",\r
 
-    \  \"estimated_duration_minutes\": 23\r
+    \  \"estimated_duration_minutes\": 10000\r
 
     }"
 order: 14000
