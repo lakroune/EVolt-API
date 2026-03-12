@@ -6,7 +6,7 @@ request:
     type: json
     content: "{\r
 
-      \    \"email\": \"lalroune00@gmail.com\",\r
+      \    \"email\": \"mhayab@example.com\",\r
 
       \    \"password\": \"password123\"\r
 
@@ -16,29 +16,18 @@ response:
   statusText: OK
   body:
     type: json
-    content: "{\r
-
-      \    \"user\": {\r
-
-      \        \"id\": 1,\r
-
-      \        \"name\": \"Ismail Lakroune\",\r
-
-      \        \"email\": \"lalroune00@gmail.com\",\r
-
-      \        \"email_verified_at\": null,\r
-
-      \        \"created_at\": \"2026-03-10T11:51:03.000000Z\",\r
-
-      \        \"updated_at\": \"2026-03-10T11:51:03.000000Z\",\r
-
-      \        \"deleted_at\": null,\r
-
-      \        \"role\": \"admin\"\r
-
-      \    },\r
-
-      \    \"token\": \"13|fbk9KGTZj8rZnz0vlcnwCWHihv1EgILXbuoBipB1977d5677\"\r
-
-      }"
+    content: |-
+      {
+        "user": {
+          "id": 2,
+          "name": "mhayab",
+          "email": "mhayab@example.com",
+          "email_verified_at": null,
+          "created_at": "2026-03-12T11:16:58.000000Z",
+          "updated_at": "2026-03-12T11:16:58.000000Z",
+          "deleted_at": null,
+          "role": "user"
+        },
+        "token": "2|sAgK7fM3Y7QRGow8pwzgPS9UqdsDiNLoO4hYByVY7c3d0218"
+      }
 order: 1773313313371

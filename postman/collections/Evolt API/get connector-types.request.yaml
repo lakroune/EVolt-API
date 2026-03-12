@@ -3,5 +3,5 @@ name: get connector-types
 url: http://127.0.0.1:8000/api/connector-types/1
 method: GET
 headers:
-  Proxy-Authorization: Bearer 10|8kqEYis8wnC0IxggCeAB8FUOZqudPUP4ZJOvLPNVe1be4175
+  Authorization: "{{token }}"
 order: 5000

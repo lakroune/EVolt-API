@@ -1,14 +1,14 @@
 $kind: http-example
 request:
-  url: ""
-  method: GET
+  url: http://127.0.0.1:8000/api/register
+  method: POST
   body:
     type: json
     content: "{\r
 
-      \  \"name\": \"Ismail Lakroune\",\r
+      \  \"name\": \"mhayab\",\r
 
-      \  \"email\": \"laelroune00@gmail.com\",\r
+      \  \"email\": \"mhayab@example.com\",\r
 
       \  \"password\": \"password123\",\r
 
@@ -16,18 +16,18 @@ request:
 
       }"
 response:
-  statusCode: 200
-  statusText: OK
+  statusCode: 201
+  statusText: Created
   body:
     type: json
     content: |-
       {
-        "user": {
-          "name": "Ismail Lakroune",
-          "email": "laelrounez@gmail.com",
-          "updated_at": "2026-03-12T11:06:22.000000Z",
-          "created_at": "2026-03-12T11:06:22.000000Z",
-          "id": 1
-        }
+          "user": {
+              "name": "mhayab",
+              "email": "mhayab@example.com",
+              "updated_at": "2026-03-12T11:16:58.000000Z",
+              "created_at": "2026-03-12T11:16:58.000000Z",
+              "id": 2
+          }
       }
 order: 1773313542592

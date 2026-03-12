@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: http://127.0.0.1:8000/api/connector-types
+  method: POST
+  headers:
+    Authorization: "{{token }}"
+  body:
+    type: json
+    content: "{\r\n  \"name\": \"CHAdeMO\"\r\n}"
+response:
+  statusCode: 201
+  statusText: Created
+  body:
+    type: json
+    content: |-
+      {
+        "connectorType": {
+          "name": "CHAdeMO",
+          "updated_at": "2026-03-12T11:27:42.000000Z",
+          "created_at": "2026-03-12T11:27:42.000000Z",
+          "id": 1
+        },
+        "message": "created successfully"
+      }
+order: 1773314874102

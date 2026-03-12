@@ -26,8 +26,9 @@ class ConnectorTypeController extends Controller
     public function store(StoreConnectorTypeRequest $request)
     {
         $data = $request->validated();
-        ConnectorType::create($data);
+        $connectorType =    ConnectorType::create($data);
         return response()->json([
+            'connectorType' => $connectorType,
             'message' => 'created successfully'
         ], 201);
     }
@@ -48,6 +49,7 @@ class ConnectorTypeController extends Controller
         $data = $request->validated();
         $connectorType->update($data);
         return response()->json([
+            'connectorType' => $connectorType,
             'message' => 'updated successfully'
         ], 200);
     }

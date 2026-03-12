@@ -1,7 +1,7 @@
 $kind: collection
 name: Evolt API
 variables:
-  "token ": ""
+  "token ": Bearer 2|sAgK7fM3Y7QRGow8pwzgPS9UqdsDiNLoO4hYByVY7c3d0218
 auth:
   - id: 4dd92e44-8db5-47af-b842-23e0908352e6
     type: bearer
